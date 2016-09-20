@@ -1,5 +1,4 @@
-# stella-luna
-:high_heel:
+# havana - prestashop templates
 
 - Install packages<br>
 <code>$ npm install</code>
