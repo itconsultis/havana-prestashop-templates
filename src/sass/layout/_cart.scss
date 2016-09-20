@@ -1,0 +1,144 @@
+#cart-container, #wishlist-container {
+	@extend .full;
+	position: fixed;
+	z-index: 81;
+	&.open {
+		.holder {
+			@include anim(.6s, .1s, $easeOutExpo, translateX(0px), 50%, 50%, transform);
+		}
+		.background {
+			@include opacity(0.8);
+			@include anim(.4s, .0s, $easeOutQuint, translateX(0px), 50%, 50%, transform opacity);	
+		}
+	}
+	.center-inline-child {
+		width: 55%;
+		@include max-screen($MQ_LARGE) {
+			width: 70%;
+		}
+		max-width: 360px;
+	}
+	.no-items {
+		width: 60%;
+		position: relative;
+		left: 20%;
+	}
+	.checkout-container {
+		position: fixed;
+		bottom: 0;
+		background-color: $white;
+		.total-container {
+			border-top: 1px solid $black;
+			padding-top: 20px;
+			h5 {
+				float: left;
+			}
+			h6 {
+				position: relative;
+				float: right;
+				font-size: $XSMALL_TEXT;
+			}
+		}
+		.primary-btn {
+			width: 100%;
+			margin-top: 50px;
+			margin-bottom: $OVERALL_PADDING;
+		}
+		.primary-btn.wishlist {
+			margin-top: 20px;
+		}
+	}
+	.top-container {
+		width: 100%;
+		height: $HEADER_H;
+		position: absolute;
+		top: 0;
+		background-color: $white;
+		.center-inline-parent {
+			position: relative;
+			top: 50%;
+			margin-top: -$XSMALL_TEXT / 2;
+		}
+		.center-inline-child {
+			@include max-screen($MQ_LARGE) {
+				width: 100%;
+				position: absolute;
+				left: ($OVERALL_PADDING) - ($CLOSE_BTN_SIZE / 2);
+			}
+		}
+		h5 {
+			float: left;
+		}
+		.close.btn {
+			top: ($CLOSE_BTN_SIZE / 2) + ($HEADER_H / 2) - ($CLOSE_BTN_SIZE / 2);
+			width: $CLOSE_BTN_SIZE;
+			height: $CLOSE_BTN_SIZE;
+			position: absolute;
+			right: ($OVERALL_PADDING) - ($CLOSE_BTN_SIZE);
+			z-index: 2;
+		}
+	}
+	.purchased-container {
+		position: absolute;
+		top: $HEADER_H;
+		overflow-y: scroll;
+		width: 100%;
+		background-color: $white;
+		ul {
+			li {
+				width: 100%;
+				height: 100px;
+				margin: 20px 0;
+				.preview-container {
+					width: 40%;
+					height: 100%;
+					float: left;
+				}
+				.infos-container {
+					position: relative;
+					left: 30px;
+					.vertical-center-child {
+						text-align: left;
+					}
+					width: 60%;
+					height: 100%;
+					float: right;
+					p.price {
+						margin: 5px 0;
+					}
+					span.remove-btn {
+						@extend p.mini;
+						font-weight: bold;
+						position: relative;
+						left: 20px;
+					}
+					span.add-cart-btn {
+						@extend span.remove-btn;
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+	.holder {
+		$w: 500px;
+		width: $w;
+		@include anim(.6s, .0s, $easeOutQuint, translateX($w), 50%, 50%, transform);
+		@include max-screen($MQ_LARGE) {
+			$w: 100%;
+			width: $w;
+			@include anim(.6s, .0s, $easeOutQuint, translateX($w), 50%, 50%, transform);			
+		}
+		position: absolute;
+		height: 100%;
+		right: 0;
+		z-index: 2;
+	}
+	.background {
+		@extend .full;
+		position: absolute;
+		background-color: $white;
+		@include opacity(0);
+		@include anim(.6s, .1s, $easeOutQuint, translateX(0px), 50%, 50%, transform opacity);	
+	}
+}

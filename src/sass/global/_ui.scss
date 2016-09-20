@@ -1,0 +1,1031 @@
+* {
+    backface-visibility: hidden;
+    // @include user-select(none);
+    transform-style: flat;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-drag: none;
+    outline: 0;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+button {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    border-spacing: 0;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
+    cursor: pointer;
+    outline: none;
+    @include user-select(none);
+}
+label {
+    @include user-select(none);
+}
+img { 
+    border:0;
+    border-style:none;
+    outline : none;
+    border: none;
+}
+img {
+    width: 100%;
+}
+svg, svg * {
+    backface-visibility: hidden;
+}
+.clear-float {
+    clear: both;
+}
+a {
+    color: $white;
+    text-decoration: none;
+    @include user-select(none);
+}
+a, a label {
+    cursor: pointer;
+}
+a:hover {
+    cursor:pointer;
+}
+a:-moz-focus-inner {
+    border: 0;
+    outline: none;
+}
+a:focus {
+    border: 0;
+    outline: none;
+}
+// for firefox image scale smoothing
+img {
+    -ms-interpolation-mode: bicubic;
+}
+// for ie
+img {
+    background: transparent;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);   /* IE6 & 7 */
+    zoom: 1;
+}
+video {
+    width: 100%;
+}
+.btn {
+    cursor: pointer;
+    @include user-select(none);
+}
+.relative {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.full {
+    width: 100%;
+    height: 100%;
+}
+.top-left {
+    top: 0;
+    left: 0;
+}
+.vertical-center-parent {
+    width: 100%;
+    height: 100%;
+    display: table;
+    .vertical-center-child {
+        display: table-cell; 
+        vertical-align: middle; 
+        text-align: center; 
+    }
+}
+.center-inline-parent {
+    width: inherit;
+    text-align: center;
+    .center-inline-child {
+        @include inline-block;
+        width: inherit;
+    }
+}
+.full-block {
+    position: absolute;
+    @extend .top-left;
+}
+
+@mixin visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s ease-out, visibility 0.4s steps(1, start);
+}
+
+.visible {
+    @include visible;
+}
+
+// .visible {
+//  visibility: visible;
+//  opacity: 1;
+//  transition: opacity 0.4s ease-out, visibility 0.4s steps(1, start);
+// }
+
+@mixin hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease-out, visibility 0.4s steps(1, end);
+}
+
+.hidden {
+    @include hidden;
+}
+
+.translate-y-neg-1 {
+    position: relative;
+    top: - $OVERALL_PADDING;
+    @include max-screen($MQ_MEDIUM) {
+        top: 0;
+    }
+}
+.translate-y-neg-2 {
+    position: relative;
+    top: - $OVERALL_PADDING * 2;
+    @include max-screen($MQ_MEDIUM) {
+        top: 0;
+    }
+}
+.x-large-text {
+    font-size: $XLARGE_TEXT;
+    @include max-screen($MQ_MEDIUM) {
+        font-size: 22px;
+    }
+}
+.large-text {
+    font-size: $LARGE_TEXT;
+    @include max-screen($MQ_LARGE) {
+        font-size: 22px;
+    }
+}
+.medium-text {
+    font-size: $MEDIUM_TEXT;
+    @include max-screen($MQ_LARGE) {
+        font-size: $XSMALL_TEXT;
+    }
+}
+.small-text {
+    font-size: $SMALL_TEXT;
+    @include max-screen($MQ_LARGE) {
+        font-size: $XSMALL_TEXT;
+    }
+}
+.x-small-text {
+    font-size: $XSMALL_TEXT;
+    // @include max-screen($MQ_LARGE) {
+    //     font-size: $XXXSMALL_TEXT;
+    // }
+    @include max-screen($MQ_MLARGE) {
+        font-size: $XXXSMALL_TEXT;
+    }
+}
+.xx-small-text {
+    font-size: $XXSMALL_TEXT;
+}
+.xxx-small-text {
+    font-size: $XXXSMALL_TEXT;
+    @include max-screen($MQ_MEDIUM) {
+        font-size: 10px;
+    }
+}
+.padding {
+    height: $OVERALL_PADDING;
+    &.half {
+        height: $OVERALL_PADDING / 2;
+    }
+}
+h1 {
+    text-transform: uppercase;
+    font-family: 'HC7Modern';
+    // letter-spacing: 6px;
+    @extend .x-large-text;
+    @include max-screen($MQ_MEDIUM) {
+        // letter-spacing: 2px;
+    }
+}
+.lined-title {
+    text-align: left;
+    border-bottom: 1px solid $white;
+    padding-bottom: 14px;
+    &.small {
+        text-transform: none;
+        font-family: 'Stanley';    
+        font-size: 10px;
+        padding-bottom: 0;
+        float: left;
+        position: relative;
+        z-index: 3;
+        line-height: 0;
+    }
+    &.update {
+        margin-right: 20px;
+    }
+    &.delete {
+        margin-left: 20px;
+    }
+}
+h2 {
+    text-transform: uppercase;
+    font-family: 'HC7Modern';
+    // letter-spacing: 4px;
+    @extend .large-text;
+}
+h3 {
+    text-transform: uppercase;
+    font-family: 'HC7Modern';
+    // letter-spacing: 0px;
+    // @extend .medium-text;
+}
+h4 {
+    text-transform: uppercase;
+    font-family: 'HC7Modern';
+    @extend .small-text;
+}
+h5 {
+    text-transform: uppercase;
+    font-family: 'HC7Modern';
+    line-height: $XSMALL_TEXT;
+    letter-spacing: 0.4px;
+    @extend .x-small-text;
+}
+h6 {
+    text-transform: uppercase;
+    line-height: $XXSMALL_TEXT;
+    @extend .xx-small-text;
+}
+h7 {
+    text-transform: none;
+    @extend h6;
+}
+p {
+    line-height: $SMALL_TEXT;
+    letter-spacing: 0;
+    @extend .xxx-small-text;
+    &.mini {
+        line-height: $MINI_TEXT;
+        font-size: $MINI_TEXT;
+        @include max-screen($MQ_MEDIUM) {
+            line-height: 10px;
+        }
+    }
+    @include max-screen($MQ_MEDIUM) {
+        line-height: 10px;
+    }
+}
+span.table-icon {
+    float: right;
+    position: relative;
+    top: 1px;
+}
+.close.btn {
+    $size: $CLOSE_BTN_SIZE;
+    width: $size;
+    height: $size;
+}
+.main-description {
+    text-align: center;
+    p {
+        @include inline-block;
+        
+        @extend .x-small-text;
+        margin-top: $OVERALL_PADDING / 1.3;
+        max-width: 460px;
+        line-height: 19px;
+    }
+}
+.grid-items-container {
+    text-align: center;
+    margin-bottom: $OVERALL_PADDING;
+    $SIZE_LARGE: 400px;
+    ul {
+        @include inline-block;
+        li {
+            @include inline-block;
+            position: relative;
+            .preview-holder {
+                width: $SIZE_LARGE;
+                height: $SIZE_LARGE;
+                @include anim(.6s, .0s, $easeOutQuint, translateY(0px));
+            }
+            .preview-title {
+                width: $SIZE_LARGE;
+                height: $SIZE_LARGE * 0.2;
+                @include opacity(0);
+                @include anim(.2s, .0s, $easeOutQuint, translateY(10px));
+            }
+            h3 {
+                padding: 2% 14% 0% 14%;
+            }
+            &:hover {
+                .preview-title {
+                    @include opacity(1);
+                    @include anim(.5s, .0s, $easeOutQuint, translateY(0));
+                }
+                .preview-holder {
+                    @include anim(.7s, .0s, $easeOutQuint, translateY(-10px));
+                }
+            }
+        }
+    }
+    @include max-screen($MQ_LARGE) {
+        $SIZE_LARGE: 180px;
+        ul {
+            li {
+                margin: 10px 0;
+                h3 {
+                    padding: 2% 0% 0% 0%;
+                }
+                .preview-holder {
+                    width: $SIZE_LARGE;
+                    height: $SIZE_LARGE;
+                }
+                .preview-title {
+                    width: $SIZE_LARGE;
+                    height: $SIZE_LARGE * 0.2;
+                }
+            }
+        }
+    }
+}
+.primary-btn {
+    text-transform: uppercase;
+    width: inherit;
+    height: $PRIMARY_BTN_H;
+    color: $white;
+    h6, p {
+        text-transform: none;
+    }
+    p {
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    a {
+        color: $white;
+    }
+}
+.secondary-btn {
+    color: $black;
+    text-align: left;
+    background-color: $white;
+    padding: 5px 5px;
+    @include inline-block;
+    h6, p {
+        font-size: $XXXSMALL_TEXT;
+        line-height: $XXXSMALL_TEXT;
+        text-transform: none;
+    }
+    a {
+        color: $white;
+    }
+}
+.small-items-container {
+    width: 80px;
+}
+.dropdown-group {
+    $border-h: 1px;
+    position: relative;
+    vertical-align: middle;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    z-index: 2;
+    &.hover {
+        ul.dropdown-menu {
+            @include opacity(1);
+            @include anim(0.3s, .0s, $easeOutQuint, translateY(0px), 50%, 50%);
+        }
+    }
+    button {
+        @include user-select(none);
+        @extend h6;
+        outline: 0;
+        color: $white;
+        border-color: $white;
+        background-color: $black;
+        border: $border-h solid $white;
+        position: relative;
+        float: left;
+        display: inline-block;
+        height: $PRIMARY_BTN_H;
+        padding: 0px 12px 0px 10px;
+        margin-bottom: 0;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        text-transform: none;
+        .caret {
+            $scale: 0.5;
+            $w: 60px;
+            $h: 30px;
+            display: inline-block;
+            width: $w * $scale;
+            height: $h * $scale;
+            padding-left: 20px;
+            top: -1px;
+            position: relative;
+        }
+    }
+    ul.dropdown-menu {
+        @extend h6;
+        position: absolute;
+        top: $PRIMARY_BTN_H;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        float: left;
+        min-width: 120px;
+        padding: 10px 10px;
+        text-align: left;
+        list-style: none;
+        background-color: $black;
+        background-clip: padding-box;
+        border: $border-h solid $white;
+        margin-top: -$border-h;
+        @include opacity(0);
+        @include anim(.2s, .0s, $easeOutQuint, translateY(2px), 50%, 50%);
+        li {
+            padding: 0 8px;
+            padding-top: 8px;
+            @include inline-block;
+            h6 {
+                @include inline-block;
+                text-transform: none;
+                padding-bottom: $XXSMALL_TEXT / 2;
+                @include simple-link-border();
+                &:hover {
+                    @include simple-link-border-hover();
+                }
+            }
+        }
+    }
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+    & > tbody > tr > th, & > tbody > tr > td {
+        padding: ($OVERALL_PADDING / 4) 8px;
+        line-height: 1.42857143;
+        vertical-align: middle;
+        border-top: 1px solid #ddd;
+        @include max-screen($MQ_LARGE) {
+            padding: 10px 0px;
+        }
+    }
+    th, td {
+        text-align: right;
+    }
+}
+
+form {
+    @include inline-block;
+    width: 100%;
+    .form-group {
+        @include inline-block;
+    }
+    .form-control {
+        width: 100%;
+        height: 22px;
+        padding: 6px 12px 6px 0px;
+        font-size: $XXSMALL_TEXT;
+        line-height: 1.42857143;
+        color: $white;
+        background-color: $black;
+        font-family: inherit;
+        background-image: none;
+        border: none;
+        border-bottom: 1px solid $white;
+        @include placeholder-color($white);
+        
+    }
+    button[type="submit"] {
+        font-size: $XSMALL_TEXT;
+        font-family: 'HC7Modern';
+        text-transform: uppercase;
+    }
+}
+
+.checkbox {
+    position: relative;
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    label {
+        @include inline-block;
+        text-align: left;
+        max-width: 100%;
+        min-height: 20px;
+        padding-left: 20px;
+        margin-bottom: 0;
+        font-weight: 400;
+        cursor: pointer;
+        p {
+            line-height: 21px;
+        }
+    }
+    & input[type=radio], & input[type=checkbox] {
+        margin: 4px 0 0;
+        line-height: normal;
+        position: absolute;
+        margin-left: -20px;
+    }
+}
+.player-container {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-bottom: $OVERALL_PADDING * 3;
+    @include max-screen($MQ_LARGE) {
+        margin-bottom: 0;
+    }
+    .media-container {
+        @include inline-block;
+        width: $MAIN_CONTAINER_W;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        & > div {
+            position: absolute;
+        }
+        .front-image-holder {
+            z-index: 1;
+        }
+    }
+}
+.video-slideshow-container, .video-player-container {
+    ul {
+        @extend .full;
+        li {
+            position: absolute;
+            @extend .full;
+            & > .relative {
+                @include anim(.4s, .0s, $easeOutQuint, scale(0.98));
+                .video-holder {
+                    @include anim(.4s, .0s, $easeOutQuint, scale(1.02));
+                }
+                img {
+                    @include anim(.4s, .05s, $easeOutQuint, scale(1.02));
+                    @include opacity(1);
+                }
+                .play.btn {
+                    @include anim(.4s, .07s, $easeOutQuint, scale(1));
+                    @include opacity(1);
+                }
+            }
+            &.open {
+                & > .relative {
+                    @include anim(.4s, .0s, $easeOutQuint, scale(1));
+                }
+            }
+            &.play {
+                & > .relative {
+                    .video-holder {
+                        @include anim(.6s, .05s, $easeOutQuint, scale(1));
+                    }
+                    img {
+                        @include anim(.4s, .0s, $easeOutQuint, scale(1));
+                        @include opacity(0);
+                    }
+                    .play.btn {
+                        @include anim(.3s, .0s, $easeOutQuint, scale(0.95));
+                        @include opacity(0);
+                    }
+                }
+            }
+            .video-holder {
+                position: absolute;
+                z-index: 1;
+                @extend .full;
+                @extend .top-left;
+            }
+            .play.btn {
+                color: $black;
+                position: absolute;
+                z-index: 6;
+                @extend .full;
+                .icon {
+                    $w: 10px;
+                    $h: 15px;
+                    $scale: 3.5;
+                    width: $w * $scale;
+                    height: $h * $scale;
+                    margin: 0 auto;
+                }
+            }
+            img {
+                position: absolute;
+                z-index: 2;
+                @extend .full;
+                @extend .top-left;
+            }
+        }
+    }
+    .controllers-container {
+        & > .btn {
+            width: 10%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            @include user-select(none);
+        }
+        .next.btn {
+            right: 0;
+            h5 {
+                position: relative;
+                left: -10px;
+                @include max-screen($MQ_MEDIUM) {
+                    left: 0;
+                }
+            }
+        }
+        .previous.btn {
+            h5 {
+                position: relative;
+                left: 10px;
+                @include max-screen($MQ_MEDIUM) {
+                    left: 0;
+                }
+            }
+        }
+        h5 {
+            @include rotate(-90);
+        }
+    }
+}
+.component-container {
+    width: $MAIN_CONTAINER_W;
+    margin: 0 auto;
+    @include max-screen($MQ_MEDIUM) {
+        margin-bottom: $OVERALL_PADDING * 2;
+    }
+    .media-block {
+        width: 50%;
+        float: left;
+        margin-bottom: $OVERALL_PADDING * 2;
+        @include max-screen($MQ_MEDIUM) {
+            float: none;
+            width: 100%;
+            margin-bottom: $OVERALL_PADDING;
+        }
+        &.small {
+            padding-right: 8%;
+            @include max-screen($MQ_MEDIUM) {
+                padding-right: 0;
+            }
+        }
+        .main-description {
+            margin: 0;
+            p {
+                padding-top: $OVERALL_PADDING;
+                padding-bottom: $OVERALL_PADDING * 0.5;
+            }
+        }
+    }
+}
+.arrow-down.btn {
+    $scale: 0.2;
+    $w: 60px;
+    $h: 46px;
+    width: $w * $scale;
+    height: $h * $scale;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.animated-block {
+    // @include anim(.0s, .0s, $easeOutQuint, translateY(20px) translateZ(0px));
+    // @include opacity(0);
+    // &.highlight {
+    //     @include anim(.8s, .0s, $easeOutQuint, translateY(0px) translateZ(0px));
+    //     @include opacity(1);
+    // }
+}
+
+.select-group {
+    position: relative;
+    .caret {
+        $scale: 0.3;
+        $w: 34.459px * $scale;
+        $h: 25.083px * $scale;
+        width: $w;
+        height: $h;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+    }
+    select.form-control {
+        display: block;
+        width: 100%;
+        height: $PRIMARY_BTN_H;
+        padding: 0px 24px 0px 12px;
+        font-size: $XXSMALL_TEXT;
+        line-height: 1.42857143;
+        color: $white;
+        background-color: $black;
+        background-image: none;
+        border: 1px solid $white;
+        border-radius: 0;
+        -webkit-appearance: none;
+        
+    }
+}
+
+.video-image-player-container {
+    .title-container {
+        font-family: 'HC7Modern';
+        font-size: $XSMALL_TEXT;
+        text-transform: uppercase;
+        width: 10%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        @include max-screen($MQ_LARGE) {
+            width: 100%;
+            height: auto;
+            position: relative;
+            left: 0;
+            top: 0;
+            margin-top: $OVERALL_PADDING;
+        }
+        .vertical-center-child  {
+            .close.btn {
+                $size: 20px;
+                width: $size;
+                height: $size;
+                left: 50%;
+                top: 50%;
+                margin-left: -$size/2;
+                margin-top: -$size/2;
+                position: absolute;
+            }
+            .title {
+                position: relative;
+                white-space: nowrap;
+            }
+        }
+    }
+    .front-image-holder {
+        @include opacity(1);
+        @include anim(.4s, .0s, $easeOutExpo, scale(1));
+    }
+    .video-holder {
+        @include opacity(1);
+        @include anim(.4s, .0s, $easeOutExpo, scale(0.9));
+    }
+    .title-container .close.btn {
+        @include opacity(0);
+        @include anim(.5s, .0s, $easeOutExpo, scale(0.9));
+    }
+    .title-container .title-holder {
+        @include opacity(1);
+        @include anim(.5s, .0s, $easeInOutQuint, scale(1)); 
+    }
+    &.video-state {
+        .front-image-holder {
+            @include opacity(0);
+            @include anim(.5s, .0s, $easeOutExpo, scale(1.1));
+        }
+        .video-holder {
+            @include opacity(1);
+            @include anim(.6s, .0s, $easeOutExpo, scale(1));
+        }
+        .title-container .close.btn {
+            @include opacity(1);
+            @include anim(.5s, .0s, $easeInOutQuint, scale(1));
+        }
+        .title-container .title-holder {
+            @include opacity(0);
+            @include anim(.5s, .0s, $easeOutExpo, scale(1.1));  
+        }
+    }
+}
+.more-block-container {
+    $padding: $OVERALL_PADDING;
+    width: $MAIN_CONTAINER_W;
+    position: relative;
+    left: 50%;
+    margin-left: -$MAIN_CONTAINER_W / 2;
+    margin-bottom: $OVERALL_PADDING * 3;
+    @include max-screen($MQ_LARGE) {
+        margin-bottom: $OVERALL_PADDING;
+    }
+    .background {
+        @include anim(.6s, .0s, $easeOutQuint, scale(1.01));
+        @include opacity(0.22);
+    }
+    .front {
+        @extend .full;
+        text-align: center;
+        top: 0px;
+        left: 0px;
+        position: absolute;
+        z-index: 1;
+        .text-up {
+            position: relative;
+            top: $padding;
+        }
+        .text-middle {
+            position: relative;
+            top: - $padding / 2;
+        }
+        .text-down {
+            position: absolute;
+            width: 100%;
+            bottom: $padding;
+        }
+    }
+    &:hover {
+        .background {
+            @include opacity(0.4);
+            @include anim(.8s, .0s, $easeOutQuint, scale(1));
+        }
+    }
+}
+
+.product-block-container {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-bottom: $OVERALL_PADDING * 3;
+    margin-left: $OVERALL_PADDING;
+    @include max-screen($MQ_LARGE) {
+        margin-left: 0;
+        margin-bottom: $OVERALL_PADDING * 2;
+    }
+    .alternative-views-container {
+        float: left;
+        @include max-screen($MQ_LARGE) {
+            display: none;
+        }
+        li {
+            @include opacity(0.2);
+            @include anim(.4s, .0s, $easeOutQuint, scaleY(1));
+            &.active {
+                @include opacity(1);
+                @include anim(.4s, .0s, $easeOutQuint, scaleY(1));
+            }
+        }
+    }
+    .main-images-container {
+        width: 64%;
+        float: left;
+        cursor: ew-resize;
+        @include max-screen($MQ_LARGE) {
+            width: 100%;
+            cursor: auto;
+        }
+        ul {
+            position: relative;
+            li {
+                position: absolute;
+                @include opacity(0);
+                @include anim(.4s, .0s, $easeOutQuint, scaleY(1));
+                &.active {
+                    @include opacity(1);
+                    @include anim(.4s, .0s, $easeOutQuint, scaleY(1));
+                }
+            }
+        }
+    }
+    .product-infos-container {
+        width: 26%;
+        float: left;    
+        text-align: left;
+        position: relative;
+        left: -$OVERALL_PADDING;
+        h3 { 
+            line-height: $MEDIUM_TEXT / 2;
+        }
+        @include max-screen($MQ_LARGE) {
+            width: 90%;
+            left: 5%;
+            h3 {
+                font-size: 15px;
+                line-height: 0;
+            }
+        }
+        & > h6 { margin: 22px 0; }
+        .select-group { margin-bottom: 22px; }
+        p.description { margin: 10px 0 26px 0; }
+        .add-to-cart { width: 160px; margin-bottom: 30px; }
+        & > p.mini { margin-bottom: 6px; }
+        .extra-description {
+            margin-bottom: 20px;
+            li {
+                p.mini {
+                    &::before {
+                        content: '•';
+                        padding-right: 10px;
+                    }
+                    line-height: $XSMALL_TEXT;
+                }
+            }
+        }
+        .add-to-cart {
+            @include max-screen($MQ_LARGE) {
+                width: 50%;
+                margin-left: 6%;
+                float: left;
+                max-width: 300px;
+            }
+        }
+        .select-group {
+            width: 150px;
+
+            &.desktop {
+                @include inline-block;
+                @include max-screen($MQ_LARGE) {
+                    display: none;
+                }
+            }
+            &.mobile {
+                margin: 0;
+                display: none;
+                @include max-screen($MQ_LARGE) {
+                    display: block;
+                    width: 44%;
+                    float: left;
+                    max-width: 300px;
+                }
+            }
+        }
+    }
+    p.description {
+        padding-right: 10%;
+    }
+}
+
+.video-player-container {
+    .video-holder {
+        @include max-screen($MQ_LARGE) {
+            display: none;
+        }
+    }
+    img {
+        @include min-screen($MQ_LARGE) {
+            display: none;
+        }
+    }
+    .title-text-container {
+        @extend .full;
+        position: absolute;
+        color: $black;
+        z-index: 3;
+        .vertical-center-child {
+            @include max-screen($MQ_MEDIUM) {
+                vertical-align: bottom;
+            }
+        }
+        h5 {
+            margin-top: $OVERALL_PADDING;
+            @include max-screen($MQ_MEDIUM) {
+                margin-top: $OVERALL_PADDING / 4;
+                margin-bottom: $OVERALL_PADDING / 4;
+            }
+        }
+    }
+}
+
+table.table.head-body {
+    margin-top: $OVERALL_PADDING;
+    thead {
+        td {
+            p {
+                text-transform: capitalize;
+                font-weight: bold;
+                // border-bottom: 1px solid $white;
+            }
+        }
+    }
+    tbody {
+        tr td {
+            padding-top: $OVERALL_PADDING / 2;
+        }
+        td:last-child {
+            text-align: right;
+        }
+    }
+    th, td {
+        text-align: left;
+        padding: 0;
+    }
+    @include max-screen($MQ_SMALL) {
+        td:nth-child(3) {
+            display: none;
+        }
+    }
+}

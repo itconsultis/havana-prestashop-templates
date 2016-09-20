@@ -1,0 +1,61 @@
+@mixin placeholder-color($color) {
+	::-webkit-input-placeholder {
+	   color: $color;
+	   @include opacity(1);
+	}
+	:-moz-placeholder { /* Firefox 18- */
+	   color: $color;
+	   @include opacity(1);
+	}
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: $color;
+	   @include opacity(1);
+	}
+	:-ms-input-placeholder {
+	   color: $color;
+	   @include opacity(1);
+	}
+}
+@mixin helvetica() {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+}
+@mixin column($count, $width) {
+	-webkit-columns: $count $width;
+	-moz-columns: $count $width;
+	columns: $count $width;
+}
+@mixin linear-gradient($fromColor, $toColor) {
+	background: transparent; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient($fromColor, $toColor); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient($fromColor, $toColor); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient($fromColor, $toColor); /* For Firefox 3.6 to 15 */
+	background: linear-gradient($fromColor, $toColor); /* Standard syntax */
+}
+@mixin simple-link-border($r:0, $g:0, $b:0) {
+	border-bottom: 1px solid $black;
+	border-color: rgba($r, $g, $b, 0);
+	@include simpleAnim(.4s, .0s, $easeOutQuint);
+}
+@mixin simple-link-border-hover($r:0, $g:0, $b:0) {
+	&:hover {
+		@include simpleAnim(.4s, .0s, $easeOutQuint);
+		border-color: rgba($r, $g, $b, 1);
+	}
+}
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+%Clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

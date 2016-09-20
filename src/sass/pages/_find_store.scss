@@ -1,0 +1,43 @@
+#find-store-page {
+	text-align: center;
+	.select-group {
+		@include inline-block;
+		width: 150px;
+		margin: 0 ($OVERALL_PADDING / 4);
+		@include max-screen($MQ_MEDIUM) {
+            width: 80%;
+            display: block;
+            margin: ($OVERALL_PADDING / 4) 0;
+            position: relative;
+            left: 10%;
+        }
+	}
+	.main-description {
+		margin-bottom: $OVERALL_PADDING / 2;
+	}
+	.address-component-container {
+		margin-top: $OVERALL_PADDING * 2;
+		text-align: center;
+		width: 80%;
+		position: relative;
+		left: 10%;
+	}
+	.address-component {
+		@include inline-block;
+		text-align: left;
+		width: 20%;
+		margin: $OVERALL_PADDING 6%;
+		@include max-screen($MQ_MEDIUM) {
+			width: 100%;
+			margin: $OVERALL_PADDING 0;
+		}
+		h5 {
+			padding-bottom: $XSMALL_TEXT;
+			margin-bottom: $XSMALL_TEXT;
+			border-bottom: 1px solid $black;
+		}
+		p {
+			margin-bottom: $OVERALL_PADDING / 4;
+		}
+	}
+}

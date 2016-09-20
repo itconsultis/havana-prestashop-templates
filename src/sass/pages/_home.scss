@@ -1,0 +1,31 @@
+#home-page {
+	.arrow-down.btn {
+		margin-bottom: $OVERALL_PADDING;
+		@include min-screen($MQ_MEDIUM) {
+			display: none;
+		}
+	}
+	.main-description {
+		margin: ($OVERALL_PADDING * 2) 0;
+		p { margin: 0; }
+		@include max-screen($MQ_MEDIUM) {
+			margin: ($OVERALL_PADDING / 2) 0;
+		}
+	}
+	.component-container {
+		.media-block {
+			img {
+				@include anim(.6s, .0s, $easeOutQuint, scale(1));
+			}
+			&:hover {
+				img {
+					@include anim(.6s, .0s, $easeOutQuint, scale(1.01));
+				}
+			}
+			.main-description {
+				left: 0;
+				margin: 0 auto;
+			}
+		}
+	}
+}

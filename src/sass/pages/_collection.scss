@@ -1,0 +1,10 @@
+#collection-page {
+	.main-description {
+        @include max-screen($MQ_LARGE) {
+			margin-top: $OVERALL_PADDING * 2;
+		    h2 {
+				display: none;
+		    }
+		}
+	}
+}

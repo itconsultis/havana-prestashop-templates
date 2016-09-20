@@ -1,0 +1,21 @@
+#shoe-care-page {
+	.main-paragraph {
+		width: 50%;
+		position: relative;
+		left: 25%;
+		margin-bottom: $OVERALL_PADDING * 2;
+		@include max-screen($MQ_MEDIUM) {
+			width: 80%;
+			left: 10%;
+		}
+		h2 {
+			margin-bottom: $OVERALL_PADDING / 2;
+		}
+		h4 {
+			margin-top: ($OVERALL_PADDING / 4);
+		}
+		p {
+			margin-bottom: $OVERALL_PADDING / 2;
+		}
+	}
+}

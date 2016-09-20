@@ -1,0 +1,111 @@
+#account-page {
+	h5 {
+		font-size: $SMALL_TEXT;
+	}
+	.links-container {
+		li {
+			margin: ($OVERALL_PADDING / 4) ($OVERALL_PADDING / 2);
+			// &.selected {
+			// 	padding-bottom: $XSMALL_TEXT / 2;
+			// 	border-bottom: 1px solid $black;
+			// 	@include simple-link-border-hover();
+			// }
+		}
+	}
+	.links-container.order {
+		margin-top: $OVERALL_PADDING / 2;
+		li {
+			h5 {
+				padding-bottom: $XSMALL_TEXT / 2;
+				@include simple-link-border();
+				&:hover {
+					@include simple-link-border-hover();
+				}
+			}
+		}
+	}
+	.shipping-payment-container.order {
+		margin-bottom: $OVERALL_PADDING;
+	}
+	.secondary-btn {
+		@include inline-block;
+		width: auto;
+		height: auto;
+		padding: ($OVERALL_PADDING / 4) ($OVERALL_PADDING / 2);
+		a {
+			color: $white;
+		}
+	}
+	.main-info-container {
+		width: 50%;
+		float: left;
+		text-align: left;
+		margin-bottom: $OVERALL_PADDING;
+		h4 { margin-bottom: $OVERALL_PADDING; }
+		h5 { margin: ($OVERALL_PADDING / 2) 0; }
+		.secondary-btn { margin-top: $OVERALL_PADDING / 2; }
+		@include max-screen($MQ_LARGE) {
+			width: 100%;
+			float: none;
+			text-align: center;
+	    }
+	}
+	.main-info-container.address-book {
+		float: left;
+	}
+	.main-checkout-container.account-information {
+		text-align: center;
+		.form-container {
+			float: none;
+			@include inline-block;
+			form {
+				text-align: left;
+			}
+		}
+		.secondary-btn {
+			margin-top: $OVERALL_PADDING / 2;
+		}
+	}
+	.main-checkout-container.newsletter-subscription {
+		text-align: center;
+		.form-container {
+			width: 100%;
+			@include inline-block;
+			float: none;
+		}
+		form label {
+			text-align: left;
+		}
+		.secondary-btn {
+			margin-top: $OVERALL_PADDING / 2;
+		}
+	}
+	.reset-password {
+		display: none;
+		&.show {
+			display: block;
+		}
+	}
+	.table.head-body.order {
+		td {
+			width: auto;
+			text-align: left;
+		}
+		tr.bold td p {
+			font-weight: bold;
+			border-top: 1px solid $black;
+			height: $OVERALL_PADDING / 2;
+			padding-top: $OVERALL_PADDING / 4;
+		}
+		@include max-screen($MQ_MEDIUM) {
+	        td:nth-child(4) {
+	            display: none;
+	        }
+	    }
+		@include max-screen($MQ_SMALL) {
+	        td:nth-child(2), td:nth-child(3), td:nth-child(4) {
+	            display: none;
+	        }
+	    }
+	}
+}

@@ -1,0 +1,262 @@
+#checkout-page, #account-page, #wishlist-page {
+	$main-button-width: 260px;
+	width: $MAIN_CONTAINER_W;
+	margin: 0 auto;
+	text-align: center;
+	@include max-screen($MQ_LARGE) {
+		width: 90%;
+	}
+	& > h3 {
+		margin: $OVERALL_PADDING 0;
+		@include max-screen($MQ_LARGE) {
+			margin: ($OVERALL_PADDING / 2) 0;
+		}
+	}
+	h3.checkout-title {
+		@include max-screen($MQ_LARGE) {
+			display: none;
+		}	
+	}
+	.table {
+		$imgW: 85px;
+		td img {
+	        width: $imgW;
+	        @include max-screen($MQ_LARGE) {
+				width: $imgW - 20px;
+			}
+	    }
+		th:first-child, td:first-child {
+			// width: $imgW + 20px;
+			// @include max-screen($MQ_LARGE) {
+			// 	width: $imgW;
+			// }
+		}
+		th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) {
+	        text-align: left;
+	    }
+	    td {
+	    	text-align: left;	
+	    }
+	    p.mini {
+	    	@include opacity(0.6);
+	    	@include inline-block;
+	    	padding-bottom: $MINI_TEXT / 2;
+	    	font-weight: bold;
+	    	@include simple-link-border();
+	    	&:hover {
+	    		@include opacity(1);
+	    		@include simple-link-border-hover();
+	    	}
+	    }
+	    td.wishlist {
+			@include max-screen($MQ_LARGE) {
+				display: none;
+			}
+	    }
+	}
+	.checkout-container {
+		width: 400px;
+		float: right;
+		// border-top: 1px solid $white;
+		margin: ($OVERALL_PADDING / 2) 0;
+		padding-top: $OVERALL_PADDING / 2;
+		@include max-screen($MQ_LARGE) {
+			width: 100%;
+			margin-top: 0;
+		}
+		.center-inline-child {
+			width: 100%;
+		}
+		h4 {
+			float: left;
+			line-height: $XXSMALL_TEXT;
+		}
+		h6 {
+			float: right;
+		}
+		button.primary-btn {
+			margin-top: $OVERALL_PADDING / 2;
+			width: 100%;
+		}
+	}
+	.main-checkout-container {
+		width: 100%;
+		text-align: left;
+		position: relative;
+		& > div {
+			width: 40%;
+			@include max-screen($MQ_LARGE) {
+				width: 100%;
+			}
+		}
+		.form-container {
+			text-align: left;
+			$width: 100%;
+			$halfWidth: $width * 0.45;
+			float: left;
+			@include max-screen($MQ_LARGE) {
+				float: none;
+			}
+			form {
+				margin: ($OVERALL_PADDING / 2) 0;
+				.form-group {
+					width: $width;
+					float: left;
+        			margin: 8px 0;
+					&.half {
+						width: $halfWidth;
+						@include max-screen($MQ_MEDIUM) {
+							width: 100%;
+						}
+					}
+					&.half.right {
+						float: right;
+						@include max-screen($MQ_MEDIUM) {
+							float: none;
+						}
+					}
+					&.error {
+						.form-control {
+							@include simpleAnim(.6s, .0s, $easeOutQuint);
+							border-color: $red;
+						}
+					}
+				}
+				label p {
+					margin-bottom: 4px;
+				}
+				.form-control {
+					width: $width;
+					padding: 0;
+					padding-left: 10px;
+					padding-right: 10px;
+					border: 1px solid $white;
+					border-color: $white;
+					@include simpleAnim(.6s, .0s, $easeOutQuint);
+				}
+			}
+		}
+		&.fullscreen {
+			text-align: center;
+			.form-container {
+				@include inline-block;
+				width: 30%;
+				vertical-align: top;
+				margin: 0 4%;
+				max-width: 350px;
+				float: none;
+				@include max-screen($MQ_MEDIUM) {
+					width: 100%;
+					max-width: 100%;
+					margin: 0;
+				}
+				label {
+					text-align: left;
+				}
+			}
+		}
+		button.primary-btn {
+			width: 100%;
+			position: absolute;
+			right: 0;
+			p {
+				float: right;
+			}
+			@include max-screen($MQ_LARGE) {
+				position: static;
+				width: 100%;
+			}
+		}
+		button.primary-btn.order {
+			margin-top: $OVERALL_PADDING;
+		}
+		button.primary-btn.sign-in, button.primary-btn.submit {
+			position: absolute;
+			float: right;
+			left: 0;
+			top: -$XSMALL_TEXT / 2;
+			@include max-screen($MQ_LARGE) {
+				position: static;
+			}
+		}
+		.shipping-payment-container {
+			float: right;
+			@include max-screen($MQ_LARGE) {
+				float: none;
+				text-align: center;
+			}
+			.card-types {
+				margin-top: $OVERALL_PADDING / 4;
+				margin-bottom: $OVERALL_PADDING / 4;
+				.card {
+					$w: 41px;
+					$h: 25px;
+					width: $w;
+					height: $h;
+					@include inline-block;
+				}
+			}
+		}
+	}
+	.primary-btn.share-wishlist {
+		width: 100%;
+		max-width: 200px;
+	}
+	.main-checkout-container.login {
+		a.forgot-password {
+			padding-bottom: $XXXSMALL_TEXT / 2;
+			text-align: right;
+			@include inline-block;
+			float: right;
+			@include simple-link-border();
+			&:hover {
+				@include simple-link-border-hover();
+			}
+		}
+	}
+	.main-checkout-container.sign-up {
+		.checkbox {
+			float: left;
+			@include max-screen($MQ_MEDIUM) {
+				float: none;
+			}
+		}
+	}
+}
+
+#checkout-page {
+	table {
+		tbody {
+			td:first-child {
+				width: 10px;
+			}
+		}
+	}
+	.select-group.choose-delivery-address {
+		width: 20%;
+		margin-top: $OVERALL_PADDING / 2;
+		@include inline-block;
+	}
+	.main-checkout-container {
+		text-align: center;
+		& > div {
+			width: 20%;
+		}
+		.shipping-payment-container {
+			float: none;
+			@include inline-block;
+			width: auto;
+			margin: 0 $OVERALL_PADDING;
+			text-align: left;
+			p, h4 {
+				text-align: left;
+			}
+			a {
+				text-align: left;
+			}
+		}
+	}
+	.message-area {
+		width: 50%;
+	}
+}

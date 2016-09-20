@@ -1,0 +1,71 @@
+// fonts
+$title-font: 'hc7modern';
+// $text-font: 'UniversLTStd';
+$text-font: 'Stanley';
+
+.title-font {
+	font-family: $title-font;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.text-font {
+	font-family: $text-font;
+	text-transform: inherit;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.HC7Craft {
+	font-family: 'HC7Craft';
+	text-transform: initial;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.stanley {
+	font-family: 'Stanley';
+	text-transform: initial;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+$HEADER_H: 63px;
+$OVERALL_PADDING: 40px;
+$CLOSE_BTN_SIZE: 14px;
+$PRIMARY_BTN_H: 40px;
+
+// Custom vars
+$min-middle-width: 960px;
+$globalFontSize: 20px;
+$overallMargin: 40px;
+
+$MAIN_CONTAINER_W: 80%;
+
+$XLARGE_TEXT: 54px; // h1
+$LARGE_TEXT: 33px; // h2
+$MEDIUM_TEXT: 24px; // h3
+$SMALL_TEXT: 18px; // h4
+$XSMALL_TEXT: 16px; // h5
+$XXSMALL_TEXT: 14px; // h6
+$XXXSMALL_TEXT: 12px; // p
+$MINI_TEXT: 10px; // p.mini
+
+// Breakpoints
+$MQ_XSMALL: 320px;
+$MQ_SMALL: 480px;
+$MQ_MEDIUM: 768px;
+$MQ_LARGE: 1024px;
+$MQ_MLARGE: 1180px;
+$MQ_XLARGE: 1280px;
+$MQ_XXLARGE: 1680px;
+
+// Color
+$white: #ffffff;
+$black: #000000;
+$red: #FF5B5B;
+
+// grid variables
+$grid-columns: 12;
+$grid-max-width: 95%;
