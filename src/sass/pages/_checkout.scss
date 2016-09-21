@@ -15,7 +15,7 @@
 	h3.checkout-title {
 		@include max-screen($MQ_LARGE) {
 			display: none;
-		}	
+		}
 	}
 	.table {
 		$imgW: 85px;
@@ -35,7 +35,7 @@
 	        text-align: left;
 	    }
 	    td {
-	    	text-align: left;	
+	    	text-align: left;
 	    }
 	    p.mini {
 	    	@include opacity(0.6);
@@ -226,9 +226,26 @@
 
 #checkout-page {
 	table {
+		th {
+			font-size: 12px;
+			text-align: left;
+		}
 		tbody {
+			td > * {
+				font-size: 12px;
+			}
 			td:first-child {
 				width: 10px;
+			}
+		}
+
+		@include max-screen($MQ_MEDIUM) {
+			th, td {
+				padding-left: 3px;
+				font-size: 10px;
+				&.cart_product {
+					display: none;
+				}
 			}
 		}
 	}
@@ -258,5 +275,150 @@
 	}
 	.message-area {
 		width: 50%;
+		@include max-screen($MQ_MEDIUM) {
+			width: 100%;
+		}
+	}
+
+	#opc_new_account {
+		text-align: center;
+		width: 30%;
+		display: inline-block;
+
+		@include max-screen($MQ_MEDIUM) {
+			width: 100%;
+		}
+		.page-subheading {
+			padding-bottom: 20px;
+		}
+		#openLoginFormBlock {
+			border-bottom: 1px solid #ffffff;
+		}
+		#new_account_title {
+			margin-top: 20px;
+		}
+		.form-group, .gender-line, .date-select	 {
+			margin: 8px 0;
+			text-align: left;
+			width: 100%;
+			label {
+				display: block;
+				font-size: 12px;
+				text-align: left;
+				padding-bottom: 4px;
+			}
+			input {
+				padding: 0;
+				padding-left: 10px;
+		    padding-right: 10px;
+		    border: 1px solid #ffffff;
+			}
+			.radio-inline {
+				display: inline-block;
+				.radio {
+					display: inline-block;
+					padding-right: 10px;
+				}
+				label {
+					display: inline-block;
+				}
+			}
+			select {
+				padding: 0px 24px 0px 12px;
+				border: 1px solid #ffffff;
+				border-radius: 0;
+    		-webkit-appearance: none;
+			}
+			.row .col-xs-4 {
+				display: inline-block;
+				&:nth-child(1) {
+					width: 20%;
+				}
+				&:nth-child(2) {
+					width: 47%;
+				}
+				&:nth-child(3) {
+					width: 30%;
+				}
+			}
+			.selector {
+				width: auto !important;
+				span {
+					padding-left: 14px;
+					font-size: 10px;
+				}
+			}
+		}
+		.checkbox {
+			text-align: left;
+			vertical-align: bottom;
+			& > label {
+				padding-left: 5px;
+				font-size: 12px;
+
+				&:first-child {
+					display: none;
+				}
+			}
+
+			.checker {
+				width: 5%;
+				display: inline-block;
+				vertical-align: middle;
+
+				& + label {
+
+				}
+			}
+		}
+		#opc_invoice_address {
+			margin-top: 40px;
+		}
+	}
+}
+
+#opc_delivery_methods {
+	@include min-screen($MQ_MEDIUM) {
+		#uniform-cgv {
+			display: inline-block;
+			vertical-align: middle;
+
+			input {
+				margin-left: -10px;
+			}
+		}
+		p {
+			display: inline-block;
+		}
+		label[for="cgv"] {
+			display: inline-block;
+			padding-left: 5px;
+
+			a {
+				font-size: 10px;
+			}
+		}
+	}
+
+	label[for="cgv"] a {
+		font-size: 12px;
+	}
+}
+
+#opc_payment_methods {
+	.payment_module {
+		a {
+			text-transform: lowercase;
+
+			&:first-letter {
+				text-transform: uppercase;
+			}
+		}
+
+		@include max-screen($MQ_MEDIUM) {
+			&.paypal {
+				padding-bottom: 50px;
+			}
+		}
 	}
 }
