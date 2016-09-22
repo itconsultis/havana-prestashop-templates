@@ -124,6 +124,10 @@ video {
     @include visible;
 }
 
+.norender {
+    display: none;
+}
+
 // .visible {
 //  visibility: visible;
 //  opacity: 1;
