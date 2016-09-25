@@ -1,5 +1,5 @@
 {
-  "name": "stella-luna",
+  "name": "havana-prestashop-templates",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://hellopath@github.com/convoy-studio/stella-luna.git"
+    "url": "git+https://hellopath@github.com/convoy-studio/havana-prestashop-templates.git"
   },
   "author": "hellopath <contact@pa-th.com> (http://pa-th.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/convoy-studio/stella-luna/issues"
+    "url": "https://github.com/convoy-studio/havana-prestashop-templates/issues"
   },
-  "homepage": "https://github.com/convoy-studio/stella-luna#readme",
+  "homepage": "https://github.com/convoy-studio/havana-prestashop-templates#readme",
   "devDependencies": {
     "babel-core": "^6.5.2",
     "babel-eslint": "^6.0.5",
