@@ -7,7 +7,7 @@
 <code>$ npm start</code>
 
 - Build files for production<br>
-<code>$ npm run build</code>
+<code>$ npm run build</code> 
 
 ## Description
 * <strong>/src</strong>     <code>source files main directory</code>
