@@ -1,0 +1,228 @@
+$break-small: 320px;
+$break-large: 1200px;
+
+
+#account-creation_form {
+  width: 400px;
+
+  .btn.btn-default {
+    color: #ffffff;
+  }
+
+    @media screen and (max-width: $break-small) {
+      width: auto;
+    }
+}
+
+#account-creation_form .form-group {
+  width: 100%;
+}
+
+.sign-up-main-container {
+  width:: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.form-container {
+
+  text-align: left;
+
+  .lined-title {
+    text-align: left;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 14px;
+  }
+
+
+  .form-control {
+    max-width: 100% !important;
+  }
+
+  @media screen and (max-width: $break-small) {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    margin: 0;
+    float: none;
+
+    }
+  @media screen and (min-width: $break-large) {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 4%;
+    max-width: 350px;
+    float: none;
+    // float: right;
+  } 
+
+  .submit {
+    display: inline;
+    margin: 14px 0 15px 0;
+    float: right;
+  }
+
+  button.btn-default.button {
+    color: #ffffff;
+    width: 100%;
+
+    span {
+      float: right;
+    }
+  }
+
+  .lost_password.form-group {
+    width: auto;
+  }
+
+  .form-group {
+    width: 100%;
+    float: left;
+    margin: 8px 0;
+
+    label {
+      font-size: 12px;
+      margin-bottom: 5px;
+      display: inline-block;
+    }
+  
+
+  }
+
+}
+
+#form_forgotpassword {
+  width: 400px;
+
+  @media screen and (max-width: $break-small) {
+    width: auto;
+  }
+}
+
+#form_forgotpassword .form-group {
+  text-align: left;
+  font-size: 12px;
+}
+
+input[type=text], input[type=email], input[type=password] {
+  width: 100%;
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #fff;
+  border-color: #fff;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .6s;
+  transition-duration: .6s;
+  -webkit-transition-timing-function: cubic-bezier(.23,1,.32,1);
+  transition-timing-function: cubic-bezier(.23,1,.32,1);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.account_creation
+{
+
+  // width: 420px;
+
+  @media screen and (max-width: $break-small) {
+    width: auto;
+  }
+
+  .radio-inline {
+    float: left;
+  }
+
+  .checkbox {
+    text-align: left;
+  }
+  
+ .form-group {
+    margin-bottom: 18px;
+    text-align: left;
+
+    label {
+      display: inline-block;
+      text-align: left;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    select {
+
+      border: 1px solid #ffffff;
+      margin: 5px 0px;
+      height: 27px;
+      width: 30%;
+      float: left;
+      margin-right: 10px;
+      padding: 3px 12px 6px 7px;
+      @media screen and (max-width: $break-small) {
+        width: 100%;
+      }
+
+    }
+
+    span {
+      margin-top: 5px;
+      display: inline-block;
+    }
+
+  }
+
+  input[type=checkbox] {
+    margin-left: 0px;
+  }
+
+
+}
+
+  .required.align-left {
+    text-align: left;
+  }
+
+#center_column.forgot-password-container {
+  width: 400px;
+
+  .form-group {
+    width: 100%;
+
+      label {
+        margin-bottom: 5px;
+        display: inline-block;
+      }
+    }
+}
+
+#submitAccount {
+  margin-top: 10px;
+}
+
+.authentification .payment__error {
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+    border: 1px solid white;
+    padding: 13px;
+    margin-bottom: 32px;
+
+    p {
+      font-size: 15px;
+    }
+    
+    ol {
+
+      margin-top: 10px;
+      font-size: 13px;
+
+      li {
+        height: 17px;
+      }
+    }
+}
+
+#create_account_error {
+  display: inline-block;
+}
